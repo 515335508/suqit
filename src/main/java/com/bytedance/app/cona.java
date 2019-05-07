@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.util.List;
 
 @Controller
@@ -30,7 +31,14 @@ public class cona {
         List<Bank> getbank = suqiimpl.getbank();
         //ViewUtil.excelTool(response,getbank,15,"银行测试","realname");
         String realPath = request.getRealPath("/");
-        System.out.println(realPath+"WEB-INF\\A");
+        File f=new File(realPath+"WEB-INF\\pages");
+        File[] files = f.listFiles();
+
+        for (File fi: files
+             ) {
+            System.out.println(fi.getName());
+        }
+        System.out.println(realPath+"WEB-INF\\pages");
 
 
         return getbank;
