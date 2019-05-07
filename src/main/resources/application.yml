@@ -1,0 +1,22 @@
+server:
+  port: 8081
+# mybatis mapper扫描设置
+mybatis:
+  mapper-locations: classpath:com/bytedance/mapper/BankMapper.xml
+  type-aliases-package: com.bytedance.pojo
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  datasource:
+    username: root
+    password: 123123
+    url: jdbc:mysql://localhost/wollo
+    driver-class-name: com.mysql.jdbc.Driver
+  http:
+      # 编码设置
+    encoding:
+      force: true
+      charset: UTF-8
+      enable: true
